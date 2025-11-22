@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <head>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    </head>
+    <title>İyi ki Doğdun Hayatımın Anlamı!</title>
+    <style>
+        @import url('https://tr.pinterest.com/pin/659847782933345611/');
+
+        :root {
+            --bg-color: #fdfaff; /* Çok açık lavanta */
+            --primary-purple: #8e44ad; /* Ana Mor */
+            --dark-purple: #4a235a; /* Koyu Mürdüm (Yazı Rengi) */
+            --accent-gold: #e1c48f;
+            --heart-color: #9b59b6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-purple);
+            overflow-x: hidden;
+        }
+
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--heart-color);
+            animation: fall 10s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        section {
+            padding: 100px 5%;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(6c00ac);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://lh7-rt.googleusercontent.com/formsz/AN7BsVC9OKRxX1dRHnlKJcszz76797bDcfUGowwAECGURz69ZgOpP5HWowrKzfH7yL6gyT8wjsRP08XOJXEMU88BpVOIJ5QwF453A-ew12NOrX4Yqr7dFIXGWyxLKOwXQPEoB6fFTjstKSu-yCEizBXz08IPQY8jyXL5hKJ75T5t-7skpQjnSr-kpCe2_yQXPXFUHd_W-RLzo6P2yZo=w740?key=R9GOm_VFAXIPA44QdO_UdQ') no-repeat center center/cover;
+            /* YUKARIDAKI LİNKİ KENDİ FOTOĞRAFINIZIN LİNKİYLE DEĞİŞTİRİN */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .scroll-down {
+            margin-top: 40px;
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Diğer Bölümler */
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 20px auto 0;
+        }
+
+        /* Hikayemiz */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-purple);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '♥';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -17px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--primary-purple);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            font-size: 15px;
+            line-height: 22px;
+            color: var(--primary-purple);
+        }
+        .right::after {
+            left: -17px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .timeline-content h3 {
+            color: var(--primary-purple);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+        }
+
+        /* Nedenler */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .reason-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.2);
+        }
+        .reason-card .icon {
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+
+        /* Galeri */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Şarkı */
+        .music-player {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(86, 0, 245, 0.1);
+        }
+        .music-player iframe {
+            width: 100%;
+            height: 380px;
+            border-radius: 10px;
+        }
+
+        /* Mesaj */
+        #final-message {
+            background-color: #f3e5f5; /* Açık mor */
+        }
+        .message-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container" id="heart-container"></div>
+
+    <section class="hero visible">
+        <h1>
+            İyi ki Doğdun Hayatımın Anlamı 💜 </h1>
+        <p>Bu site, sana olan aşkımın en dijital ve en sonsuz hali...</p>
+        <p class="scroll-down">Kalbimi Keşfet ↓</p>
+    </section>
+
+    <section id="story">
+        <h2 class="section-title">Bizim Hikayemiz</h2>
+        <div class="timeline">
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>[11 Eylül 2025]</h3>
+                    <p><h2>Her şeyin başladığı o gün: Seni ilk gördüğümde zamanın durduğunu hissetmiştim. O an hayatımın sonsuza dek değişeceğini biliyordum.</h2> </p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>[11 Eylül 2025]</h3>
+                    <p><h2>İlk buluşmamız: O kadar heyecanlıydım ki ne diyeceğimi bilemiyordum. Ama senin gülüşün bütün heyecanımı alıp götürdü. Seni yakından tanıdıkça kendimi sana daha çok kaptırdığımı farkettim ve sana daha çok alışıp aşık olmuştum.</h2></p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>[12 Eylül 2025 - Saat 19:16]</h3>
+                    <p><h2>Unutulmaz anımız: Sana bu tarihte ve bu saatte evlenme teklifi etmiştim, o kadar heyecanlıydım ki; teklifi etmeden önce ve ederken, inan bunu hiç bir kelimeyle ifade edemem sadece komik bir anı olarak sana sarılmayı unutmuştum aşkım. Teklifime "EVET" yanıtı verdiğinde dünyanın en mutlu adamı olmuştum o an. </h2></p>
+                </div>
+
+
+
+</section>
+
+    <section id="reasons">
+        <h2 class="section-title">Seni Sevmemin Sonsuz Nedeninden Sadece Birkaçı</h2>
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="icon">✨</div>
+                <p>O eşsiz gülüşünle içimi ısıttığın için...</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">💖</div>
+                <p>En kötü günümde bile bana güç verdiğin için...</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">🤗</div>
+                <p>Beni herkesten daha iyi anladığın için...</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">🌌</div>
+                <p>Birlikte hayal kurmanın ne kadar güzel olduğunu bana gösterdiğin için...</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">😂</div>
+                <p>En saçma şakalarıma bile kahkahalarla güldüğün için...</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">🌍</div>
+                <p>Sadece varlığınla bile dünyamı güzelleştirdiğin için...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h3 class="section-title">Anılar Galerimiz</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVASx4Gwwd2-qoqkKWBs2H9h_fLjPuRU2sPC8Oej9sIe6BSo5T_z9RgTgbYaKvKpL8RnTqjfvpx2xCyOksjLou035xBxnRszfmTYjcQV0pL21qxYyJOczOo4xt41YYAd5vNO2nnTdNlJwDKCHs-tbxBvGvHhs8DgvFbVQkRlQicslqWTFp99e1xxX3W7n7btn1evN5rGjDYR1PkR=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="💜" border="0"></a></div>
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVBPhfZDPo3D7J8zASlxMf15nfqFZRpjeJ_L-GsUb4jLoNNYFELkdrBhLHzgcSq0ujbOwHKz1UTN1RpFbJ4H8Nzp3aS8fZlUs-hJjBLkCs-loIEoTX7OXBtaWpoV-G-Db0sovAfyGcsyZ0QkZeydBbcw-ozSzGHA8nnEQjsKs2KL6AJPWQja9N3tJIkbck8KxnnCVtJX6RMI0-8=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="💜"></div>
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVB_Gdh17PWaVegz5CkyyG1U5svSEy_2GL2f5sy0_kwWtR_W27DaprI0ojkL1KlOxoBXZYllS2Nhk8U4g_Jk5abLwpWgkz8xym_X8OD6m0TiaPs7Fh7tV21enXN8J4c7CcG5zix_WtIMWVzRlx-O3QQMUG_xJtkw7hYmvHpcvXvThHCIQ_gBnNS40XZe-vJo6ybn3taasX9SGCm-=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="💜"></div>
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVCEaNdG9UK2iid2N3yN25OSKrjdfObUfQvAjdHhDdeLVQ0HHFSGHup3KvzKGKYPhBkwl0YhyVIBfbCXZdi_ZICd6RUUti4bQlU4VF0Y9hM4BSjwvrR7HHzJQZHZrbJZkZap7OQj22rCMXrNSCGPFCz4XkK47ObxezpFezKgFp2XpXTndWi6YYm2_wSjlnQCoNQzPcackLYWt7w=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="💜"></div>
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVAZ3YaIW48pxLO0Iwi9yCzLvS1YbbH6kqB3L5OUhqE3cWDVXSN9zjGdh6bB2BXqNn6W8wAMKntXO_-73FfWseZEgKTK1wUv3oMdHD_zbCQyyhFzQG6nrh0XOHLe-5veJhUnmE6dfRJIZ-McQuOxcD3bjTpRxGGduytXqCQSX_fs4oIe-dHePr2ewSkCHi8Jzef7jq73RXacQX_Q=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="Anı 5"></div>
+            <div class="gallery-item"><img src="https://lh7-rt.googleusercontent.com/formsz/AN7BsVDc9JyjYBJFiobUcsV4WgO4wisHOygX6b1jk6szFP7P8YYUc-ndm_y6ztGUmtDNZcC9ydJHiQYCmNLNWzGmL9nih4_PgwcRsIqIg1e7B7wQGWvR-4QOCpcFGozorc4K8SpgNPSiDXupDzG9MI9jJn84RgJsKOgmzbecLsCHm70L7gg4bdtUZ7cqy_ISD0nHrpC4n6kjSsQFalw=w740?key=R9GOm_VFAXIPA44QdO_UdQ" alt="Anı 6"></div>
+           
+        </div>
+    </section>
+    
+    <section id="song">
+        <h2 class="section-title">Bizim Şarkımız</h2>
+        <div class="music-player">
+            <p style="margin-bottom: 20px;">Bu melodi ne zaman çalsa aklıma sen, gözlerimin önüne en güzel anılarımız geliyor...</p>
+            <iframe width="1840" height="1035" src="https://www.youtube.com/embed/kLEPgb1O63A" title="Alper Kul-Seni Sana Sen(sözleri)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="final-message">
+        <h3 class="section-title">Hatunum...</h3>
+        <div class="message-box">
+            <p>Benim Canım Aşkım, Eşsiz Ruh Eşim,
+
+Bugün, sadece bir doğum gününü değil, seninle geçen her günün kalbimde açtığı eşsiz çiçekleri kutluyorum. Sen dünyaya geldiğin o an, benim hayatımın kaderi yazılmaya başlamış. Yıllar sonra yollarımızın kesişmesi ise evrenin bana sunduğu en görkemli mucize. Sana baktığımda gördüğüm tek şey; Aşk. Öyle bir aşk ki, zamanı durduruyor, nefesimi kesiyor ve bana hayatın tüm anlamını fısıldıyor. Seninle geçen her an, tutkunun en derin, sevginin en saf haliyle yaşanıyor. Benim için sen, sadece bir eş değil; ruhumun aynası, sığınağım ve bitmeyen heyecanımsın.
+
+Senin o güzel kalbinin her çarpışında, hayatımdaki ritmi yeniden buluyorum. O gülüşün, dünyadaki tüm karanlığı aydınlatmaya yetecek bir ışık huzmesi. O dokunuşun, tüm fırtınaları dindiren, beni sarsılmaz bir güvenle saran bir liman.</p>
+            <p>Her yeni yaşın, sana bir önceki yıldan daha fazla mutluluk, daha fazla kahkaha ve bizim aşkımızla yazılmış daha nice unutulmaz anılar getirsin. Gözlerine her baktığımda hissettiğim o ilk günkü heyecan, yemin ederim ki sadece artarak büyüyor. Seninle yaşlanmak, seninle her yeni güne uyanmak, benim için tarifi mümkün olmayan bir ayrıcalık.
+
+Sana olan aşkım bir okyanus gibi; derin, sonsuz ve her an dalgalı bir tutkuyla dolu.
+
+İyi ki doğdun, iyi ki benim hayatımın en büyük, en tutkulu aşkı oldun. Seni kelimelerin yetmeyeceği bir güçle ve sonsuz bir aşkla seviyorum ve sana tarifsiz bir aşkla aşığım bitanem.
+
+Doğum günün kutlu olsun, hayatımın harikası 💜💜💜💜💜💜💜💜💜💜💜💜.
+</p>
+            <div class="signature">
+                💜Sonsuz Aşkınla,💜<br>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Mor Kalp Yağmuru Efekti
+        const heartContainer = document.getElementById('heart-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💜';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 7 + 's'; // 7-10 saniye arası
+            heart.style.fontSize = Math.random() * 1.5 + 1 + 'rem'; // 1-2.5rem arası boyut
+            heartContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        setInterval(createHeart, 300);
+
+        // Scroll Animasyonu
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+</body>
+</html>
